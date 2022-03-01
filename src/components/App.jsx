@@ -10,11 +10,15 @@ function App() {
     setItem(newItem);
   }
 
-  function handleClick() {
+  function addItem() {
     setItemArray(function () {
       return [...itemArray, item];
     });
     setItem("");
+  }
+
+  function deleteItem() {
+    console.log("delete it");
   }
 
   return (
@@ -25,7 +29,7 @@ function App() {
 
       <div className="form">
         <input onChange={handleChange} type="text" value={item} />
-        <button onClick={handleClick}>
+        <button onClick={addItem}>
           <span>Add</span>{" "}
         </button>
       </div>
@@ -33,8 +37,13 @@ function App() {
       <div>
         <ul>
           {console.log(itemArray)}
-          {itemArray.map((elm) => (
-            <ToDoItem content={elm}/>
+          {itemArray.map((elm, index) => (
+            <ToDoItem
+              key={index}
+              id={index}
+              content={elm}
+              onChecked={deleteItem}
+            />
           ))}
         </ul>
       </div>
