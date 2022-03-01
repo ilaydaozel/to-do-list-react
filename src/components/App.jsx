@@ -13,6 +13,7 @@ function App() {
     setItemArray(function () {
       return [...itemArray, item];
     });
+    setItem("");
   }
 
   return (
