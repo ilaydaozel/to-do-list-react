@@ -17,8 +17,12 @@ function App() {
     setItem("");
   }
 
-  function deleteItem() {
-    console.log("delete it");
+  function deleteItem(id) {
+    setItemArray((prevValues) => {
+      return prevValues.filter((value, index) => {
+        return index !== id;
+      });
+    });
   }
 
   return (
