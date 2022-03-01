@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ToDoItem from "./ToDoItem.jsx";
 
 function App() {
   const [item, setItem] = useState("");
@@ -33,7 +34,7 @@ function App() {
         <ul>
           {console.log(itemArray)}
           {itemArray.map((elm) => (
-            <li>{elm}</li>
+            <ToDoItem content={elm}/>
           ))}
         </ul>
       </div>
